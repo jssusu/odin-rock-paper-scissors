@@ -1,6 +1,6 @@
 let computerScore = 0, humanScore = 0;
 let roundCount = 1;
-const choices = ["rock", "paper", "scissors"];
+const choices = ["Rock", "Paper", "Scissors"];
 
 function getComputerChoice() {
     return choices[Math.floor(Math.random() * 3)];
@@ -17,7 +17,7 @@ function getHumanChoice() {
         if (!choices.includes(humanChoice)) {
             alert("Invalid choice. Enter \"Rock\", \"Paper\", or \"Scissors\". This is not case-sensitive.");
         }
-    } while (choices.includes(humanChoice));
+    } while (!choices.includes(humanChoice));
 
     return humanChoice;
 }
@@ -60,4 +60,15 @@ function playRound() {
 
     console.log(`Current Score (You - Computer): ${humanScore} - ${computerScore}`);
     roundCount++;
+}
+
+function playRounds(numRounds) {
+    if (numRounds < 1 || numRounds % 1 !== 0) {
+        console.log("Invalid argument. numRounds must be a positive integer.");
+        return;
+    }
+
+    for (i = 0; i < numRounds; i++) {
+        playRound();
+    }
 }
