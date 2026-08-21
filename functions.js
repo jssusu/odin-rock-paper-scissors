@@ -62,6 +62,6 @@ function playGame() {
         playRound();
     }
 
-    console.log(`${computerScore > humanScore ? "Computer wins!" : "You win!"}`);
+    console.log(`${computerScore === humanScore ? "It's a draw..." : computerScore > humanScore ? "Computer wins!" : "You win!"}`);
     console.log(`Overall score (You - Computer): ${humanScore} - ${computerScore}`);
 }
