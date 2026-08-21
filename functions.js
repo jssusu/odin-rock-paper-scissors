@@ -40,23 +40,21 @@ function playGame() {
     let computerScore = 0, humanScore = 0;
 
     function playRound() {
-    let computerChoice = getComputerChoice(), humanChoice = getHumanChoice();
-    let computerWon = computerWins(computerChoice, humanChoice);
+        let computerChoice = getComputerChoice(), humanChoice = getHumanChoice();
+        let computerWon = computerWins(computerChoice, humanChoice);
 
-    console.log(`Round ${roundCount}:`);
-
-    switch (computerWon) {
-        case null:
-            console.log("It's a tie!");
-            break;
-        case true: 
-            console.log(`You lose! ${computerChoice} beats ${humanChoice}!`);
-            computerScore++;
-            break;
-        case false:
-            console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
-            humanScore++;
-            break;
+        switch (computerWon) {
+            case null:
+                console.log("It's a tie!");
+                break;
+            case true: 
+                console.log(`You lose! ${computerChoice} beats ${humanChoice}!`);
+                computerScore++;
+                break;
+            case false:
+                console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
+                humanScore++;
+                break;
         }
     }
 
