@@ -1,5 +1,3 @@
-let computerScore = 0, humanScore = 0;
-let roundCount = 1;
 const choices = ["Rock", "Paper", "Scissors"];
 
 function getComputerChoice() {
@@ -38,7 +36,10 @@ function computerWins(computerChoice, humanChoice) {
     }
 }
 
-function playRound() {
+function playGame() {
+    let computerScore = 0, humanScore = 0;
+
+    function playRound() {
     let computerChoice = getComputerChoice(), humanChoice = getHumanChoice();
     let computerWon = computerWins(computerChoice, humanChoice);
 
@@ -56,19 +57,13 @@ function playRound() {
             console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
             humanScore++;
             break;
+        }
     }
 
-    console.log(`Current Score (You - Computer): ${humanScore} - ${computerScore}`);
-    roundCount++;
-}
-
-function playRounds(numRounds) {
-    if (numRounds < 1 || numRounds % 1 !== 0) {
-        console.log("Invalid argument. numRounds must be a positive integer.");
-        return;
-    }
-
-    for (i = 0; i < numRounds; i++) {
+    for (i = 0; i < 5; i++) {
         playRound();
     }
+
+    console.log(`${computerScore > humanScore ? "Computer wins!" : "You win!"}`);
+    console.log(`Overall score (You - Computer): ${humanScore} - ${computerScore}`);
 }
