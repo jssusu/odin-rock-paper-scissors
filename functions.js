@@ -48,7 +48,7 @@ function playGame() {
                 console.log("It's a tie!");
                 break;
             case true: 
-                console.log(`You lose! ${computerChoice} beats ${humanChoice}!`);
+                console.log(`Computer wins! ${computerChoice} beats ${humanChoice}!`);
                 computerScore++;
                 break;
             case false:
